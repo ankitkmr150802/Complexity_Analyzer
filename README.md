@@ -22,10 +22,10 @@ Built with **React (frontend)** and **Express.js (backend)**, and powered by **A
 ## 📸 Screenshots
 
 ### 🔹 Code Input Editor
-![Code Input](./Assets/CodeInput.png)
+![Code Input](./Assets/ss1.png)
 
 ### 🔹 AI Complexity Analysis Output
-![Analysis Output](./Assets/AnalysisOutput.png)
+![Analysis Output](./Assets/ss2.png)
 
 ---
 
