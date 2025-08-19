@@ -1,0 +1,170 @@
+/* In src/App.css */
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.app-title {
+  font-weight: 700 !important;
+  letter-spacing: -1px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  flex-grow: 1;
+  height: calc(100% - 60px);
+}
+
+.panel {
+  border-radius: 12px;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+body[data-mui-color-scheme='dark'] .panel {
+  background-color: rgba(22, 28, 36, 0.7);
+  border-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+body[data-mui-color-scheme='light'] .panel {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.editor-panel {
+  position: relative;
+}
+
+.code-editor {
+  flex-grow: 1;
+  font-family: 'Fira Code', monospace !important;
+  font-size: 16px !important;
+  background: transparent !important;
+  caret-color: #646cff;
+  overflow: auto !important;
+}
+
+.review-button {
+  position: absolute !important;
+  bottom: 1rem;
+  right: 1rem;
+  font-weight: 600 !important;
+}
+
+.output-panel {
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.placeholder-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+/* === FINAL, WORKING MARKDOWN STYLES === */
+
+/* This styles the headers like "COMPLEXITY VERDICT" */
+.markdown-content h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  border-left: 4px solid;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* This styles the horizontal separator lines */
+.markdown-content hr {
+  border: none;
+  height: 2px;
+  margin: 2rem 0;
+  border-radius: 2px;
+}
+
+.markdown-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.markdown-content li {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content p {
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.markdown-content pre {
+  margin-top: 1rem !important;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+
+/* --- Dark Mode Colors --- */
+body[data-mui-color-scheme='dark'] .markdown-content {
+  color: #c1d5ee; /* Softer grey/blue for paragraphs */
+}
+body[data-mui-color-scheme='dark'] .markdown-content h4 {
+  border-color: #646cff; /* purple highlight bar */
+  background: rgba(100, 108, 255, 0.1); /* soft background */
+  color: #e0e0e0; /* Brighter white for headers */
+}
+body[data-mui-color-scheme='dark'] .markdown-content hr {
+  background: linear-gradient(to right, #646cff, #21d4fd); /* purple → cyan */
+}
+body[data-mui-color-scheme='dark'] .markdown-content pre {
+  background-color: #161B22;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* --- Light Mode Colors --- */
+body[data-mui-color-scheme='light'] .markdown-content {
+  color: #637381; /* Dark, readable grey for paragraphs */
+}
+body[data-mui-color-scheme='light'] .markdown-content h4 {
+  border-color: #646cff;
+  background: rgba(100, 108, 255, 0.1);
+  color: #212B36; /* Very dark blue/black for headers */
+}
+body[data-mui-color-scheme='light'] .markdown-content hr {
+  background: linear-gradient(to right, #646cff, #21d4fd);
+}
+body[data-mui-color-scheme='light'] .markdown-content pre {
+  background-color: #F3F4F6;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Add this to the end of App.css */
+
+/* Style for the O(...) notation in the verdict list */
+/* ./* Style for the O(√n) and O(1) specifically in the verdict */
+.markdown-content ul li:nth-child(1) { /* Targets "Time Complexity: O(√n)" */
+ color: #e91e63; /* Pink color for Time Complexity */
+}
+
+.markdown-content ul li:nth-child(2) { /* Targets "Space Complexity: O(1)" */
+ color: #007bff; /* Blue color for Space Complexity */
+}
+
